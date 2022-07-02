@@ -1,3 +1,3 @@
 # algoexpert
 
-Solutions for algorithmic problems from AlgoExpert.
+Solutions to algorithmic problems from AlgoExpert.
