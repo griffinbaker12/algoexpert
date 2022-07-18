@@ -5,7 +5,6 @@ function getPermutations(array) {
 }
 
 function helper(array, perms, currentPerm) {
-  console.log(currentPerm, perms);
   if (!array.length && currentPerm.length) perms.push(currentPerm);
   else {
     for (let i = 0; i < array.length; i++) {
