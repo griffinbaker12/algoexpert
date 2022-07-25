@@ -12,14 +12,18 @@ class SuffixTrie {
   populateSuffixTrieFrom(string) {
     // Write your code here.
     for (let i = 0; i < string.length; i++) {
-      let node = this.root;
-      for (let j = i; j < string.length; j++) {
-        const letter = string[j];
-        if (!(letter in node)) node[letter] = {};
-        node = node[letter];
-      }
-      node[this.endSymbol] = true;
+      this.helper(string, i);
     }
+  }
+
+  helper(string, i) {
+    let node = this.root;
+    for (let idx = i; idx < string.length; idx++) {
+      const letter = string[idx];
+      if (!(letter in node)) node[letter] = {};
+      node = node[letter];
+    }
+    node[this.endSymbol] = true;
   }
 
   contains(string) {
@@ -29,7 +33,7 @@ class SuffixTrie {
       if (!(letter in node)) return false;
       node = node[letter];
     }
-    return this.endSymbol in node;
+    return this.endSymbol in node ? true : false;
   }
 }
 
